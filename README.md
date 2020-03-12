@@ -4,7 +4,7 @@
 Never practiced before? Stuck in an endless cycle of youtube videos? Can't find a friendly neighborhood traceur to adopt you? Here's some structure so you can go training **TODAY**!
 ## How to Start Parkour
 ### Print this
-This should fit on one or two pages. Print it, grab some friends, and go outside.  
+This should fit on three pages. Print it, grab some friends, and go outside.  
 ### Choose a training area
 - Look for a playground, fitness trail, natural space, or urban area to train.
 - Pick a space where you are not annoying the general public or on private property.
