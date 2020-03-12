@@ -1,5 +1,5 @@
 # r/Parkour Guide to Session One  
-[Original guide](https://i.imgur.com/t5D7HrM.jpg)^(by u/rogueoperative)
+[Original guide](https://i.imgur.com/t5D7HrM.jpg) by u/rogueoperative
 
 Never practiced before? Stuck in an endless cycle of youtube videos? Can't find a friendly neighborhood traceur to adopt you? Here's some structure so you can go training **TODAY**!
 ## How to Start Parkour
