@@ -1,0 +1,158 @@
+# Link Taggin rules
+~title (includes, regex): ['(\[PK\]|\[FR\]|\[Tech\]|\[Other\]|\[Podcast\]|\[Discuss\]|\[spots\]|\[spot\]|\[Jam\])']
+action: remove
+#moderators_exempt: false # So I can test
+comment: |
+ Your submission does not have a [tag]. All posts **must include a tag in the title** or it will be automatically removed. Titles cannot be modified after posting. Include a tag by typing one of the following into the post title with **square brackets** as shown (not case-sensitive). Here are the available tags:  
+
+ ### Media or text post tags:
+ - NEW: **[Jam]** is for Parkour gyms, certified instructors, or established groups to post about any upcoming jams in their areas. Send us a modmail to verify the jam and get on the whitelist.
+ - NEW: **[Spots]** is a tag for requesting training locations or gyms in a specific area. You must include the location in the title!
+ - **[Discuss]** is used for blogs, vlogs, podcasts, technical videos, tutorials, or text posts where you would like to start a topic of conversation.
+ - **[Tech]** is used for videos that showcase movement you want advice and help with. The tag could also be used on a text post where you detail the problems you are having, but videos are better for receiving feedback!
+ - **[Other]** is a miscellaneous tag that you can post animal Parkour, unique experiences, still photos, non-Parkour movement, whatever. It's the most lenient tag but please don't abuse it.
+
+ ### Video-only tags:
+ - **[FR]** is used for any show reels or training videos that you want to share.
+ - **[PK]** is reserved for training videos where **at least 80% of the movement (1 out of 5)** is focused on traversing your environment efficiently.
+
+ #### Examples of titles with tags:
+ - Does anyone know of any [spots] in London?
+ - XYZPK is having a [jam] this weekend 01/20 in Melbourne
+ - Can someone help me with my roll \[tech\]?
+ - [\[Discuss\] What is the Natural Method?](https://www.youtube.com/watch?v=i0V6aUjRjUQ)
+ - [\[PK\] Parkour, Literally by L'Inconsolable](https://www.youtube.com/watch?v=SMppD-bUNWo)
+ - [Advanced freerunning vaults in slow motion \[FR\]](https://www.youtube.com/watch?v=UII_PZ3_Rc4)
+ - [\[Other\] Here's a repost of a cat jumping!!](https://www.reddit.com/r/BetterEveryLoop/comments/c8sg76/the_way_this_cat_jumps/)
+
+---
+
+# Double tagging makes me angry
+title (includes, regex): ['(\[PK\]|\[FR\]|\[Tech\]|\[Other\]|\[Jam\]|\[Podcast\]|\[Discuss\]|\[Spots\]|\[spot\]) (\[PK\]|\[FR\]|\[Tech\]|\[Other\]|\[Podcast\]|\[Discuss\]|\[Jam\]|\[Spots\]|\[Spot\]|\[[A-Za-z]\])','(\[PK\]|\[FR\]|\[Tech\]|\[Other\]|\[Podcast\]|\[Discuss\]|\[Spot\]|\[Jam\]|\[spots\])(\[PK\]|\[FR\]|\[Tech\]|\[Jam\]|\[Other\]|\[Podcast\]|\[Discuss\]|\[Spots\]|\[spot\]|\[[A-Za-z]\])']
+action: remove
+#moderators_exempt: false
+comment: |
+ Your submission has two [tag]s. Pick one and resubmit. All posts **must include a tag in the title** or it will be automatically removed. Since titles cannot be modified after posting, we want to make sure you get it right the first time. Include it by typing one of the following tags into the post title with square brackets as shown (not case-sensitive). Here are the available tags:
+
+ ### Media or text post tags:
+ - NEW: **[Jam]** is for Parkour gyms, certified instructors, or established groups to post about any upcoming jams in their areas. Send us a modmail to verify the jam and get on the whitelist.
+ - NEW: **[Spots]** is a tag for requesting training locations or gyms in a specific area. You must include the location in the title!
+ - **[Discuss]** is used for blogs, vlogs, podcasts, technical videos, tutorials, or text posts where you would like to start a topic of conversation.
+ - **[Tech]** is used for videos that showcase movement you want advice and help with. The tag could also be used on a text post where you detail the problems you are having, but videos are better for receiving feedback!
+ - **[Other]** is a miscellaneous tag that you can post animal Parkour, unique experiences, still photos, non-Parkour movement, whatever. It's the most lenient tag but please don't abuse it.
+
+ ### Video-only tags:
+ - **[FR]** is used for any show reels or training videos that you want to share.
+ - **[PK]** is reserved for training videos where **at least 80% of the movement (1 out of 5)** is focused on traversing your environment efficiently.
+
+ #### Examples of titles with tags:
+ - Does anyone know of any [spots] in London?
+ - XYZPK is having a [jam] this weekend 01/20 in Melbourne
+ - Can someone help me with my roll \[tech\]?
+ - [\[Discuss\] What is the Natural Method?](https://www.youtube.com/watch?v=i0V6aUjRjUQ)
+ - [\[PK\] Parkour, Literally by L'Inconsolable](https://www.youtube.com/watch?v=SMppD-bUNWo)
+ - [Advanced freerunning vaults in slow motion \[FR\]](https://www.youtube.com/watch?v=UII_PZ3_Rc4)
+ - [\[Other\] Here's a repost of a cat jumping!!](https://www.reddit.com/r/BetterEveryLoop/comments/c8sg76/the_way_this_cat_jumps/)
+
+---
+    # People out here putting no titles wtf.
+    title (regex): '^.{0,7}$'
+    action: remove
+    action_reason: "Please add a descriptive title."
+    comment: "Please add a more descriptive title. Tag-only titles are not allowed."
+---
+    # Link submissions only for [PK], [FR] tags
+    type: text submission
+    title (includes, regex): ['(\[PK\]|\[FR\])']
+    action: remove
+    action_reason: "[PK] and [FR] tags are reserved for training videos."
+    comment: "[PK] and [FR] tags are reserved for training videos. Please review our posting guidelines."
+---
+
+    # Video submissions only for [PK], [FR] tags
+    type: link submission
+    title (includes, regex): ['(\[PK\]|\[FR\])']
+    url (ends-with): [.png, .jpg, .jpeg, .bmp]
+    action: remove
+    action_reason: "[PK] and [FR] tags are reserved for training videos."
+    comment: "[PK] and [FR] tags are reserved for training videos, images must be posted using the [Other] tag. Please review our posting guidelines."
+
+---
+
+    # [Jam] tag rules
+    title (includes, regex): ['(\[Jam\])']
+    action: remove
+    action_reason: "Whitelist request"
+    comment: "Please send us a modmail to verify the [Jam] and we will approve this post. **Reminder**: jams are community events hosted by Parkour gyms, certified instructors, or established groups. The verification process involves the mod team communicating with the event organizer. If you are requesting training locations, please use the [spots] tag with the area included in the title instead."
+
+---
+
+    # Auto flair them links
+    title (includes): "[PK]"
+    set_flair: "Parkour"
+
+---
+    # Auto flair them links
+    title (includes): "[FR]"
+    set_flair: "Freerunning"
+
+---
+    # Auto flair them links
+    title (includes): "[Tech]"
+    set_flair: "Tech / Help"
+
+---
+    # Auto flair them links
+    title (includes): "[Other]"
+    set_flair: "Other"
+
+---
+    # Auto flair them links
+    title (includes): "[Podcast]"
+    set_flair: "Podcast"
+
+---
+    # Auto flair them links
+    title (includes): "[Discuss]"
+    set_flair: "Discuss"
+
+---
+
+    # Auto flair them links
+    title (includes): "[Spots]"
+    set_flair: "Spots"
+
+---
+
+    # Auto flair them links
+    title (includes): "[Spot]"
+    set_flair: "Spots"
+
+---
+
+    # Auto flair automod challenge posts
+    title (includes): "Weekly Challenge"
+    author: automoderator
+    set_flair: "Challenge"
+
+---
+
+    # Send an alert to modmail if anything gets 2+ reports
+    reports: 2
+    modmail: The above item has received 2+ reports, please investigate.
+
+---
+
+# Beginner posts get automod resources
+title: ["beginner","beginners","beginer","get into","getting into","recommend","recommendation","recommendations","how can","im new","i'm new","how do","start","learn","learning","exercises","beginning","training program","routine","build muscle","conditioning","moves","common","started","starting"]
+comment: |
+ Welcome to r/Parkour! Please read our [rules](https://www.reddit.com/r/Parkour/about/rules) and our [wiki](https://www.reddit.com/r/parkour/wiki/). The wiki has resources such as [how to start](https://www.reddit.com/r/Parkour/wiki/how-to-start), advice on [equipment](https://www.reddit.com/r/Parkour/wiki/shoes), building [muscle](https://thefitness.wiki/muscle-building-101/), starting [flips](https://www.reddit.com/r/Parkour/comments/1vswn1/a_guide_to_starting_flips/), and help with [common injuries](https://www.reddit.com/r/Parkour/comments/1ss7wy/how_to_treat_parkour_related_injuries/). You can also [search](https://www.reddit.com/r/Parkour/search/?q=%20start%20&restrict_sr=1) through a decade of advice.  
+ 
+ Posts and comments that break our rules may be removed without warning.
+
+---
+
+# Shoe threads
+title: ["shoes","shoe","sneaker","sneakers","footwear","vans"]
+comment: |
+ View our [shoe recommendations](https://www.reddit.com/r/Parkour/search/?q=what%20shoes%20&restrict_sr=1&sort=relevance) wiki page.
